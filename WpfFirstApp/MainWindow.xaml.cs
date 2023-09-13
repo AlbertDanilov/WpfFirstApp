@@ -23,22 +23,6 @@ namespace WpfFirstApp
         public MainWindow()
         {
             InitializeComponent();
-
-            Button myButton = new Button();
-            myButton.Width = 100;
-            myButton.Height = 30;
-            myButton.Content = "Кнопка";
-            grid1.Children.Add(myButton);
         }
-
-        //private void Button_Click(object sender, RoutedEventArgs e)
-        //{
-        //    string text = texBox1.Text;
-
-        //    if (!string.IsNullOrEmpty(text.Trim()))
-        //    {
-        //        MessageBox.Show(text);
-        //    }            
-        //}
     }
 }

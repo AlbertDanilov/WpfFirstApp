@@ -7,8 +7,14 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid x:Name="grid1">
-        <!--<TextBox x:Name="texBox1" Width="150" Height="30" VerticalAlignment="Top" Margin="20" />
-        <Button x:Name="button1" Content="Нажать" FontSize="13" Width="80" Height="30"
-                Click="Button_Click" />-->
+        <Button x:Name="myButton" Width="120" Height="40" Content="Кнопка">
+            <Button.HorizontalAlignment>
+                <HorizontalAlignment>Center</HorizontalAlignment>
+            </Button.HorizontalAlignment>
+
+            <Button.Background>
+                <SolidColorBrush Opacity="0.5" Color="Red" />
+            </Button.Background>
+        </Button>
     </Grid>
 </Window>
