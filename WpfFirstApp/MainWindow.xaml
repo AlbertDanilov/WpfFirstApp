@@ -3,18 +3,14 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WpfFirstApp"
+        xmlns:local="clr-namespace:WpfFirstApp.Models" 
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid x:Name="grid1">
-        <Button x:Name="myButton" Width="120" Height="40" Content="Кнопка">
-            <Button.HorizontalAlignment>
-                <HorizontalAlignment>Center</HorizontalAlignment>
-            </Button.HorizontalAlignment>
-
-            <Button.Background>
-                <SolidColorBrush Opacity="0.5" Color="Red" />
-            </Button.Background>
+        <Button x:Name="phoneButton" Width="284" HorizontalAlignment="Center" Margin="0,197,0,181">
+            <Button.Content>
+                <local:Phone Name="Iphone 15" Price="1200" />
+            </Button.Content>
         </Button>
     </Grid>
 </Window>
