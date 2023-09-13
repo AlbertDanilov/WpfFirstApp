@@ -7,13 +7,13 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid x:Name="mainGrid" ShowGridLines="True">
-        <WrapPanel>
+        <WrapPanel ItemHeight="30" ItemWidth="80">
             <Button Background="AliceBlue" Content="Кнопка 1" />
             <Button Background="Blue" Content="Кнопка 2" />
-            <Button Background="Aquamarine" Content="Кнопка 3" Height="30"/>
-            <Button Background="DarkGreen" Content="Кнопка 4" Height="20"/>
+            <Button Background="Aquamarine" Content="Кнопка 3"/>
+            <Button Background="DarkGreen" Content="Кнопка 4"/>
             <Button Background="LightGreen" Content="Кнопка 5"/>
-            <Button Background="RosyBrown" Content="Кнопка 6" Width="80" />
+            <Button Background="RosyBrown" Content="Кнопка 6" />
             <Button Background="GhostWhite" Content="Кнопка 7" />
         </WrapPanel>
     </Grid>
