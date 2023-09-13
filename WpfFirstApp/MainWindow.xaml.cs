@@ -27,7 +27,12 @@ namespace WpfFirstApp
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("WPF from Metanit");
+            string text = texBox1.Text;
+
+            if (!string.IsNullOrEmpty(text.Trim()))
+            {
+                MessageBox.Show(text);
+            }            
         }
     }
 }
