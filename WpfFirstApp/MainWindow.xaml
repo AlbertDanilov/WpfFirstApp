@@ -7,6 +7,17 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid x:Name="mainGrid" ShowGridLines="True">
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0" Background="Lavender">
+            <Button Visibility="Collapsed" Content="Панель Collapsed" />
+            <Button Height="20" Content="Visible Button" />
+        </StackPanel>
+        <StackPanel Grid.Column="1" Background="LightGreen">
+            <Button Visibility="Hidden" Content="Панель Hidden" />
+            <Button Height="20" Content="Visible Button" />
+        </StackPanel>
     </Grid>
 </Window>
