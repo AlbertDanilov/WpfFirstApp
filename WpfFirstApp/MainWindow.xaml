@@ -7,18 +7,14 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid x:Name="mainGrid" ShowGridLines="True">
-        <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>    
-            <RowDefinition></RowDefinition>    
-            <RowDefinition></RowDefinition>    
-        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>
-            <ColumnDefinition Width="0.5*"></ColumnDefinition>
-            <ColumnDefinition Width="1.5*"></ColumnDefinition>  
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>  
         </Grid.ColumnDefinitions>
-        <Button Grid.Column="0" Grid.Row="0" Content="Row 0 Col 0" />
-        <Button Grid.Column="0" Grid.Row="1" Content="Wide Button" Grid.ColumnSpan="3" />
-        <Button Grid.Column="2" Grid.Row="2" Content="Row 2 Col 2" />
+        <Button Grid.Column="0" Content="Left Button" />
+        <GridSplitter Grid.Column="1" ShowsPreview="False" Width="3"
+                      HorizontalAlignment="Center" VerticalAlignment="Stretch"/>
+        <Button Grid.Column="2" Content="Right Button" />
     </Grid>
 </Window>
