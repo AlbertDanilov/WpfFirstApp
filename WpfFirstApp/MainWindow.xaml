@@ -7,10 +7,12 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid x:Name="mainGrid" ShowGridLines="True">
-        <StackPanel>
-            <Button Background="Blue" Content="1" />
-            <Button Background="White" Content="2" />
-            <Button Background="Red" Content="3" />
-        </StackPanel>
+        <DockPanel LastChildFill="True">
+            <Button DockPanel.Dock="Top" Background="AliceBlue" Content="Верхняя кнопка" />
+            <Button DockPanel.Dock="Bottom" Background="BlanchedAlmond" Content="Нижняя кнопка" />
+            <Button DockPanel.Dock="Left" Background="Aquamarine" Content="Левая кнопка" />
+            <Button DockPanel.Dock="Right" Background="DarkGreen" Content="Правая кнопка" />
+            <Button Background="LightGreen" Content="Центр" />
+        </DockPanel>
     </Grid>
 </Window>
