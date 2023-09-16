@@ -8,12 +8,7 @@
         xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
         mc:Ignorable="d"
         Name="Main" Height="200" Width="300">
-    <StackPanel Background="Lavender">
-        <Calendar x:Name="calendar1" FirstDayOfWeek="Monday"
-        >
-            <Calendar.BlackoutDates>
-                <CalendarDateRange Start="10/5/2013" End="10/8/2013"></CalendarDateRange>
-            </Calendar.BlackoutDates>
-        </Calendar>
-    </StackPanel>
+    <Grid Background="Lavender">
+        <InkCanvas Background="LightCyan" />
+    </Grid>
 </Window>
