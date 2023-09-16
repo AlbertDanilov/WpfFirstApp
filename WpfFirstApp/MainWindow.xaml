@@ -8,16 +8,20 @@
         Title="MainWindow" Height="250" Width="300">
     <Grid x:Name="mainGrid" ShowGridLines="True">
         <StackPanel>
-            <GroupBox Padding="5">
-                <GroupBox.Header>
-                    <Button Background="Lavender">Выбрать блюдо</Button>
-                </GroupBox.Header>
+            <Expander Header="Некрасов">
+                <TextBlock>Однажды в студеную зимнюю пору...</TextBlock>
+            </Expander>
+            <Expander Header="Пушкин">
+                <TextBlock>Онегин был, по мнению многих, ученый малый, но ...</TextBlock>
+            </Expander>
+            <Expander Header="Опрос">
                 <StackPanel>
-                    <RadioButton IsChecked="True" Margin="3">Салат Оливье</RadioButton>
-                    <RadioButton Margin="3">Котлеты по-киевски</RadioButton>
-                    <RadioButton Margin="3">Селедка под шубой</RadioButton>
+                    <TextBlock>Отметьте, что вам больше нравится</TextBlock>
+                    <CheckBox>WinForms</CheckBox>
+                    <CheckBox>WPF</CheckBox>
+                    <CheckBox>ASP.NET</CheckBox>
                 </StackPanel>
-            </GroupBox>
+            </Expander>
         </StackPanel>        
     </Grid>
 </Window>
