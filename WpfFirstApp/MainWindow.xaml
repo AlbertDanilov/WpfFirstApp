@@ -8,8 +8,9 @@
         xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
         mc:Ignorable="d"
         Name="Main" Height="200" Width="300">
-    <Grid Background="Lavender">
+    <StackPanel Background="Lavender">
         <Slider Value="0" Minimum="0" Maximum="100" SelectionStart="0" Height="30" 
         IsSelectionRangeEnabled="True" />
-    </Grid>
+        <ProgressBar Minimum="0" Maximum="100" Value="50" Height="25" />
+    </StackPanel>
 </Window>
