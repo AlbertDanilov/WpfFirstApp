@@ -7,8 +7,7 @@
         mc:Ignorable="d"
         Title="ScrolViewer" Height="220" Width="300">
     <StackPanel>
-        <DockPanel>
-            <TextBox SpellCheck.IsEnabled="True" Language="ru-ru">Привет, как дила?</TextBox>
-        </DockPanel>
+        <Label Target="{Binding ElementName=TextBox1}">_привет</Label>
+        <TextBox Name="TextBox1" Margin="0 30 0 0" Height="30" Width="100"></TextBox>
     </StackPanel>
 </Window>
