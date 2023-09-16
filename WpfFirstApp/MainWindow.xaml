@@ -9,7 +9,7 @@
         mc:Ignorable="d"
         Name="Main" Height="200" Width="300">
     <Grid Background="Lavender">
-        <DataGrid x:Name="phonesGrid" AutoGenerateColumns="True">
-        </DataGrid>
+        <Slider Value="0" Minimum="0" Maximum="100" SelectionStart="0" Height="30" 
+        IsSelectionRangeEnabled="True" />
     </Grid>
 </Window>
