@@ -8,22 +8,16 @@
         Title="MainWindow" Height="250" Width="300">
     <Grid x:Name="mainGrid" ShowGridLines="True">
         <StackPanel>
-            <RadioButton GroupName="Phones" Content="iPhone 6S">
-                <RadioButton.ToolTip>
-                    <ToolTip Background="#60AA4030" Foreground="White" HasDropShadow="False"
-                Placement="Relative" HorizontalOffset="15" VerticalOffset="10">
-                        <StackPanel>
-                            <TextBlock>Цена:</TextBlock>
-                            <TextBlock>Связной: 54990 рублей</TextBlock>
-                            <TextBlock>Ситилинк: 539990 рублей</TextBlock>
-                        </StackPanel>
-                    </ToolTip>
-                </RadioButton.ToolTip>
-            </RadioButton>
-            <RadioButton GroupName="Phones" ToolTipService.Placement="Mouse"
-        ToolTip="Цена: 29990 рублей" Content="Nexus 5X" />
-            <RadioButton GroupName="Phones" ToolTip="Цена: 39990 рублей" Content="Lumia 950" />
-            
+            <GroupBox Padding="5">
+                <GroupBox.Header>
+                    <Button Background="Lavender">Выбрать блюдо</Button>
+                </GroupBox.Header>
+                <StackPanel>
+                    <RadioButton IsChecked="True" Margin="3">Салат Оливье</RadioButton>
+                    <RadioButton Margin="3">Котлеты по-киевски</RadioButton>
+                    <RadioButton Margin="3">Селедка под шубой</RadioButton>
+                </StackPanel>
+            </GroupBox>
         </StackPanel>        
     </Grid>
 </Window>
