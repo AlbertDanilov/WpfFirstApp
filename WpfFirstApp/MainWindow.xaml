@@ -9,26 +9,14 @@
         mc:Ignorable="d"
         Name="Main" Height="200" Width="300">
     <Grid Background="Lavender">
-        <TreeView>
-            <TextBox>Элемент TreeView</TextBox>
-            <TreeViewItem Header="Базы данных">
-                <TreeViewItem Header="MS SQL Server" />
-                <TreeViewItem Header="MySQL" />
-                <TreeViewItem Header="MongoDB" />
-                <TreeViewItem Header="Postgres" />
-            </TreeViewItem>
-            <TreeViewItem Header="Языки программирования">
-                <TreeViewItem Header="C-языки">
-                    <TreeViewItem Header="C#" />
-                    <TreeViewItem Header="C/C++" />
-                    <TreeViewItem Header="Java" />
-                </TreeViewItem>
-                <TreeViewItem Header="Basic">
-                    <TreeViewItem Header="Visual Basic" />
-                    <TreeViewItem Header="VB.Net" />
-                    <TreeViewItem Header="PureBasic" />
-                </TreeViewItem>
-            </TreeViewItem>
-        </TreeView>
+        <DataGrid x:Name="phonesGrid" AutoGenerateColumns="True" ItemsSource="{DynamicResource ResourceKey=phones}">
+            <DataGrid.Resources>
+                <col:ArrayList x:Key="phones">
+                    <local1:Phone Title="iPhone 6S" Company="Apple" Price="54990" />
+                    <local1:Phone Title="Lumia 950" Company="Microsoft" Price="39990" />
+                    <local1:Phone Title="Nexus 5X" Company="Google" Price="29990" />
+                </col:ArrayList>
+            </DataGrid.Resources>
+        </DataGrid>
     </Grid>
 </Window>
