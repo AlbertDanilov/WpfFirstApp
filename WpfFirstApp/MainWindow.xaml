@@ -9,23 +9,26 @@
         mc:Ignorable="d"
         Name="Main" Height="200" Width="300">
     <Grid Background="Lavender">
-        <ToolBar Height="25" VerticalAlignment="Top">
-            <ToggleButton>
-                <Image Source="icon0.jpg" />
-            </ToggleButton>
-            <Separator />
-            <Button>
-                <Image Source="icon1.jpg" />
-            </Button>
-            <Separator />
-            <Button>
-                <Image Source="icon2.jpg" />
-            </Button>
-            <Separator />
-            <Button>
-                <Image Source="icon3.jpg" />
-            </Button>
-            <TextBox Foreground="LightGray" Width="100">Поиск...</TextBox>
-        </ToolBar>
+        <TreeView>
+            <TextBox>Элемент TreeView</TextBox>
+            <TreeViewItem Header="Базы данных">
+                <TreeViewItem Header="MS SQL Server" />
+                <TreeViewItem Header="MySQL" />
+                <TreeViewItem Header="MongoDB" />
+                <TreeViewItem Header="Postgres" />
+            </TreeViewItem>
+            <TreeViewItem Header="Языки программирования">
+                <TreeViewItem Header="C-языки">
+                    <TreeViewItem Header="C#" />
+                    <TreeViewItem Header="C/C++" />
+                    <TreeViewItem Header="Java" />
+                </TreeViewItem>
+                <TreeViewItem Header="Basic">
+                    <TreeViewItem Header="Visual Basic" />
+                    <TreeViewItem Header="VB.Net" />
+                    <TreeViewItem Header="PureBasic" />
+                </TreeViewItem>
+            </TreeViewItem>
+        </TreeView>
     </Grid>
 </Window>
