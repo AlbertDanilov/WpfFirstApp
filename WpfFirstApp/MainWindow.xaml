@@ -7,26 +7,8 @@
         mc:Ignorable="d"
         Title="ScrolViewer" Height="220" Width="300">
     <StackPanel>
-        <ScrollViewer Name="scroll" CanContentScroll="True" Height="150">
-            <GroupBox Header="Смартфон 2015" Padding="5">
-                <StackPanel>
-                    <RadioButton GroupName="Phones" Margin="4">iPhone 6S</RadioButton>
-                    <RadioButton GroupName="Phones" Margin="4">iPhone 6S Plus</RadioButton>
-                    <RadioButton GroupName="Phones" Margin="4">Lumia 550</RadioButton>
-                    <RadioButton GroupName="Phones" Margin="4">Lumia 950</RadioButton>
-                    <RadioButton GroupName="Phones" Margin="4">Nexus 5X</RadioButton>
-                    <RadioButton GroupName="Phones" Margin="4">Nexus 6P</RadioButton>
-                    <RadioButton GroupName="Phones" Margin="4">Galaxy S6 Edge</RadioButton>
-                </StackPanel>
-            </GroupBox>
-        </ScrollViewer>
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-            <RepeatButton Content="Up" Grid.Column="0" Margin="4" Click="Up_Click" />
-            <RepeatButton Content="Down" Grid.Column="1" Margin="4" Click="Down_Click" />
-        </Grid>
+        <DockPanel>
+            <TextBox SpellCheck.IsEnabled="True" Language="ru-ru">Привет, как дила?</TextBox>
+        </DockPanel>
     </StackPanel>
 </Window>
