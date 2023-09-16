@@ -8,5 +8,26 @@
         xmlns:local1="clr-namespace:WpfFirstApp.Models"
         mc:Ignorable="d"
         Name="Main" Height="200" Width="300">
-    <ListBox x:Name="usersList" />
+    <StackPanel>
+        <ComboBox>
+            <ComboBoxItem>
+                <StackPanel>
+                    <TextBlock FontSize="16">Tom</TextBlock>
+                    <TextBlock>Microsoft</TextBlock>
+                </StackPanel>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <StackPanel>
+                    <TextBlock FontSize="16">Bob</TextBlock>
+                    <TextBlock>Google</TextBlock>
+                </StackPanel>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <StackPanel>
+                    <TextBlock FontSize="16">Sam</TextBlock>
+                    <TextBlock>JetBrains</TextBlock>
+                </StackPanel>
+            </ComboBoxItem>
+        </ComboBox>
+    </StackPanel>
 </Window>

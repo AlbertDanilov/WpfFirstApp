@@ -24,26 +24,7 @@ namespace WpfFirstApp
         public MainWindow()
         {
             InitializeComponent();
-
-            usersList.ItemsSource = new List<Person>()
-            {
-                new Person{Name="Tom", Age=38},
-                new Person {Name="Bob", Age=42},
-                new Person{Name="Sam", Age=25}
-            };
-
-            // устанавливаем отображаемое свойство
-            usersList.DisplayMemberPath = "Name";
-
-            usersList.SelectionChanged += usersList_SelectionChanged;
         }
 
-        private void usersList_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (usersList.SelectedItem is Person person)
-            {
-                MessageBox.Show(person.Name);
-            }
-        }
     }
 }
