@@ -23,15 +23,16 @@ namespace WpfFirstApp
         public MainWindow()
         {
             InitializeComponent();
+        }
 
-            Button button1 = new Button();
-            StackPanel stackPanel = new StackPanel();
-            stackPanel.Children.Add(new TextBlock { Text = "Набор кнопок" });
-            stackPanel.Children.Add(new Button { Content = "Red", Height = 20, Background = new SolidColorBrush(Colors.Red) });
-            stackPanel.Children.Add(new Button { Content = "Yellow", Height = 20, Background = new SolidColorBrush(Colors.Yellow) });
-            stackPanel.Children.Add(new Button { Content = "Green", Height = 20, Background = new SolidColorBrush(Colors.Green) });
-            button1.Content = stackPanel;
-            mainGrid.Children.Add(button1);
+        private void acceptButton_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Действие выполнено");
+        }
+
+        private void escButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close(); // закрытие окна
         }
     }
 }
