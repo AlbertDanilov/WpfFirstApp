@@ -24,15 +24,5 @@ namespace WpfFirstApp
         {
             InitializeComponent();
         }
-
-        private void acceptButton_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Действие выполнено");
-        }
-
-        private void escButton_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close(); // закрытие окна
-        }
     }
 }
