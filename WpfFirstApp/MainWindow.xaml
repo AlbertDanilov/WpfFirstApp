@@ -9,14 +9,7 @@
         mc:Ignorable="d"
         Name="Main" Height="200" Width="300">
     <Grid Background="Lavender">
-        <DataGrid x:Name="phonesGrid" AutoGenerateColumns="True" ItemsSource="{DynamicResource ResourceKey=phones}">
-            <DataGrid.Resources>
-                <col:ArrayList x:Key="phones">
-                    <local1:Phone Title="iPhone 6S" Company="Apple" Price="54990" />
-                    <local1:Phone Title="Lumia 950" Company="Microsoft" Price="39990" />
-                    <local1:Phone Title="Nexus 5X" Company="Google" Price="29990" />
-                </col:ArrayList>
-            </DataGrid.Resources>
+        <DataGrid x:Name="phonesGrid" AutoGenerateColumns="True">
         </DataGrid>
     </Grid>
 </Window>
