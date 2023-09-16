@@ -25,5 +25,11 @@ namespace WpfFirstApp
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Phone phone = (Phone)this.Resources["iPhone6s"]; // получаем ресурс по ключу
+            MessageBox.Show(phone.Price.ToString());
+        }
     }
 }
