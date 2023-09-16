@@ -9,8 +9,11 @@
         mc:Ignorable="d"
         Name="Main" Height="200" Width="300">
     <StackPanel Background="Lavender">
-        <Slider Value="0" Minimum="0" Maximum="100" SelectionStart="0" Height="30" 
-        IsSelectionRangeEnabled="True" />
-        <ProgressBar Minimum="0" Maximum="100" Value="50" Height="25" />
+        <Calendar x:Name="calendar1" FirstDayOfWeek="Monday"
+        >
+            <Calendar.BlackoutDates>
+                <CalendarDateRange Start="10/5/2013" End="10/8/2013"></CalendarDateRange>
+            </Calendar.BlackoutDates>
+        </Calendar>
     </StackPanel>
 </Window>
