@@ -8,12 +8,8 @@ namespace WpfFirstApp.Models
 {
     public class Phone
     {
-        public string Name { get; set; }
+        public string Title { get; set; } = string.Empty;
+        public string Company { get; set; } = string.Empty;
         public int Price { get; set; }
-
-        public override string ToString()
-        {
-            return $"Смартфон {Name}; Цена: {Price}";
-        }
     }
 }

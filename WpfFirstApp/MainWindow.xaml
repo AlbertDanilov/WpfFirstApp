@@ -3,31 +3,28 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:sys="clr-namespace:System;assembly=mscorlib"
         xmlns:local="clr-namespace:WpfFirstApp" 
         xmlns:local1="clr-namespace:WpfFirstApp.Models"
+        xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
         mc:Ignorable="d"
         Name="Main" Height="200" Width="300">
-    <StackPanel>
-        <ComboBox>
-            <ComboBoxItem>
-                <StackPanel>
-                    <TextBlock FontSize="16">Tom</TextBlock>
-                    <TextBlock>Microsoft</TextBlock>
-                </StackPanel>
-            </ComboBoxItem>
-            <ComboBoxItem>
-                <StackPanel>
-                    <TextBlock FontSize="16">Bob</TextBlock>
-                    <TextBlock>Google</TextBlock>
-                </StackPanel>
-            </ComboBoxItem>
-            <ComboBoxItem>
-                <StackPanel>
-                    <TextBlock FontSize="16">Sam</TextBlock>
-                    <TextBlock>JetBrains</TextBlock>
-                </StackPanel>
-            </ComboBoxItem>
-        </ComboBox>
-    </StackPanel>
+    <Grid Background="Lavender">
+        <ListView Name="phonesList" ItemsSource="{DynamicResource ResourceKey=phones}" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Title}">Модель</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Company}" Width="100">Компания</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Price}">Цена</GridViewColumn>
+                </GridView>
+            </ListView.View>
+            <ListView.Resources>
+                <col:ArrayList x:Key="phones">
+                    <local1:Phone Title="iPhone 6S" Company="Apple" Price="54990" />
+                    <local1:Phone Title="Lumia 950" Company="Microsoft" Price="39990" />
+                    <local1:Phone Title="Nexus 5X" Company="Google" Price="29990" />
+                    <local1:Phone Title = "Galaxy Edge" Company = "Samsung" Price = "45670" />
+                </col:ArrayList>
+            </ListView.Resources>
+        </ListView>
+    </Grid>
 </Window>
