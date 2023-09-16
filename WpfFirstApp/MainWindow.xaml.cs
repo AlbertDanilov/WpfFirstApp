@@ -26,10 +26,10 @@ namespace WpfFirstApp
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Control_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            Phone phone = (Phone)this.Resources["iPhone6s"]; // получаем ресурс по ключу
-            MessageBox.Show(phone.Price.ToString());
+            textBlock1.Text = textBlock1.Text + "sender: " + sender.ToString() + "\n";
+            textBlock1.Text = textBlock1.Text + "source: " + e.Source.ToString() + "\n\n";
         }
     }
 }

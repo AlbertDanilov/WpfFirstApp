@@ -8,23 +8,16 @@
         xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
         mc:Ignorable="d"
         Name="Main" Height="200" Width="300">
-    <Window.Resources>
-        <local1:Phone Price="600" Title="iPhone 6S" x:Key="iPhone6s" />
-    </Window.Resources>
-    <Grid x:Name="grid1" DataContext="{StaticResource iPhone6s}">
-        <Grid.RowDefinitions>
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-        </Grid.RowDefinitions>
+    <Grid x:Name="grid1">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition />
+            <ColumnDefinition Width="Auto" />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        <TextBlock Text="Модель" />
-        <TextBlock Text="{Binding Title}" Grid.Column="1"  />
-        <TextBlock Text="Цена" Grid.Row="1" />
-        <TextBox Text="{Binding Price, Mode=TwoWay}" Grid.Column="1" Grid.Row="1"  />
-        <Button Content="Check" Grid.Row="2" Grid.Column="2" Click="Button_Click" />
+        <StackPanel Grid.Column="0" VerticalAlignment="Center" MouseDown="Control_MouseDown">
+            <Button x:Name="button1" Width="80" Height="50" MouseDown="Control_MouseDown" Margin="10" >
+                <Ellipse Width="30" Height="30" Fill="Red" MouseDown="Control_MouseDown" />
+            </Button>
+        </StackPanel>
+        <TextBlock x:Name="textBlock1" Grid.Column="1" Padding="10" />
     </Grid>
 </Window>
