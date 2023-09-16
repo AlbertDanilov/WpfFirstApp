@@ -24,5 +24,15 @@ namespace WpfFirstApp
         {
             InitializeComponent();
         }
+
+        private void Up_Click(object sender, RoutedEventArgs e)
+        {
+            scroll.LineUp();
+        }
+
+        private void Down_Click(object sender, RoutedEventArgs e)
+        {
+            scroll.LineDown();
+        }
     }
 }
