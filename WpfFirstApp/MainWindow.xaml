@@ -7,21 +7,14 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="250" Width="300">
     <Grid x:Name="mainGrid" ShowGridLines="True">
-        <StackPanel>
-            <Expander Header="Некрасов">
-                <TextBlock>Однажды в студеную зимнюю пору...</TextBlock>
-            </Expander>
-            <Expander Header="Пушкин">
-                <TextBlock>Онегин был, по мнению многих, ученый малый, но ...</TextBlock>
-            </Expander>
-            <Expander Header="Опрос">
-                <StackPanel>
-                    <TextBlock>Отметьте, что вам больше нравится</TextBlock>
-                    <CheckBox>WinForms</CheckBox>
-                    <CheckBox>WPF</CheckBox>
-                    <CheckBox>ASP.NET</CheckBox>
-                </StackPanel>
-            </Expander>
-        </StackPanel>        
+        <ScrollViewer>
+            <StackPanel>
+                <Button MinHeight="60" Background="Red"/>
+                <Button MinHeight="60" Background="Orange"/>
+                <Button MinHeight="60" Background="Yellow"/>
+                <Button MinHeight="60" Background="Green"/>
+                <Button MinHeight="60" Background="Blue"/>
+            </StackPanel>
+        </ScrollViewer>      
     </Grid>
 </Window>
