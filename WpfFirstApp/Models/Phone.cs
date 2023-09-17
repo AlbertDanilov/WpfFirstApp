@@ -1,53 +1,54 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
 namespace WpfFirstApp.Models
 {
-    public class Phone : DependencyObject
+    public class Phone : INotifyPropertyChanged
     {
-        public static readonly DependencyProperty TitleProperty;
-        public static readonly DependencyProperty PriceProperty;
+        public event PropertyChangedEventHandler? PropertyChanged;
 
-        static Phone()
+        private string title;
+        private int price;
+        private string company;
+
+
+        public string Company 
         {
-            TitleProperty = DependencyProperty.Register("Title", typeof(string), typeof(Phone));
-
-            FrameworkPropertyMetadata metadata = new FrameworkPropertyMetadata();
-            metadata.CoerceValueCallback = new CoerceValueCallback(CorrectValue);
-
-            PriceProperty = DependencyProperty.Register("Price", typeof(int), typeof(Phone), metadata,
-                new ValidateValueCallback(ValidateValue));
+            get { return company; }
+            set { 
+                    company = value;
+                    OnPropertyChanged("Company");
+            }
         }
-
-        private static object CorrectValue(DependencyObject d, object baseValue)
-        {
-            int currentValue = (int)baseValue;
-            if (currentValue > 1000)  // если больше 1000, возвращаем 1000
-                return 1000;
-            return currentValue; // иначе возвращаем текущее значение
-        }
-
-        private static bool ValidateValue(object value)
-        {
-            int currentValue = (int)value;
-            if (currentValue >= 0) // если текущее значение от нуля и выше
-                return true;
-            return false;
-        }
+     
 
         public string Title
         {
-            get { return (string)GetValue(TitleProperty); }
-            set { SetValue(TitleProperty, value); }
+            get { return title; }
+            set { 
+                    title = value;
+                    OnPropertyChanged("Title");
+            }
         }
         public int Price
         {
-            get { return (int)GetValue(PriceProperty); }
-            set { SetValue(PriceProperty, value); }
+            get { return price; }
+            set {
+                    price = value;
+                    OnPropertyChanged("Price");  
+                }
+        }
+
+        public void OnPropertyChanged([CallerMemberName] string prop = "")
+        {
+            if (PropertyChanged != null)
+                PropertyChanged(this, new PropertyChangedEventArgs(prop));
         }
     }
 }

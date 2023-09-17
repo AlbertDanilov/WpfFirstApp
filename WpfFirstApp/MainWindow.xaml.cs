@@ -26,6 +26,13 @@ namespace WpfFirstApp
         {
             InitializeComponent();
 
+            
+        }
+
+        public void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Phone phone = (Phone)this.Resources["nexusPhone"];
+            phone.Company = "LG";
         }
     }
 }

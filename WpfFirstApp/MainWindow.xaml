@@ -8,8 +8,28 @@
         xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
         mc:Ignorable="d"
         Name="Main" Height="193" Width="456">
-    <StackPanel>
-        <TextBox x:Name="myTextBox" Height="30" />
-        <TextBlock x:Name="myTextBlock" Text="{Binding ElementName=myTextBox,Path=Text}" Height="30" />
-    </StackPanel>
+    <Window.Resources>
+        <local1:Phone x:Key="nexusPhone" Title="Nexus X5" Company="Google" Price="25000" />
+    </Window.Resources>
+    <Grid Background="Black" DataContext="{StaticResource nexusPhone}" TextBlock.Foreground="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <TextBlock Text="Модель" />
+        <TextBlock Text="{Binding Title}" Grid.Row="1" />
+        <TextBlock Text="Производитель" Grid.Column="1"/>
+        <TextBlock Text="{Binding Company}" Grid.Column="1" Grid.Row="1" />
+        <TextBlock Text="Цена" Grid.Column="2" />
+        <TextBlock Text="{Binding Price}" Grid.Column="2" Grid.Row="1" />
+
+        <Button Foreground="White" Content="Изменить" Click="Button_Click" Background="Black"
+            BorderBrush="Silver" Grid.Column="2" Grid.Row="2" />
+    </Grid>
 </Window>
