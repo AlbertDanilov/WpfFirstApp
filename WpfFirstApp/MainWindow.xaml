@@ -17,15 +17,20 @@
                 <Setter Property="Button.Margin" Value="10" />
             </Style.Setters>
             <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="True">
-                    <!--<Setter Property="FontSize" Value="14" />-->
-                    <Setter Property="Foreground" Value="Red" />
-                </Trigger>
+                <EventTrigger RoutedEvent="Click">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="Width" Duration="0:0:1" To="220" AutoReverse="True" />
+                                <DoubleAnimation Storyboard.TargetProperty="Height" Duration="0:0:1" To="80" AutoReverse="True" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
             </Style.Triggers>
         </Style>
     </Window.Resources>
     <StackPanel Background="Black" >
-        <Button x:Name="button1" Content="Кнопка 1"/>
-        <Button x:Name="button2" Content="Кнопка 2" />
+        <Button x:Name="button1" Width="100" Height="30" Content="Кнопка 1"/>
     </StackPanel>
 </Window>
