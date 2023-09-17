@@ -8,19 +8,8 @@
         xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
         mc:Ignorable="d"
         Name="Main" Height="193" Width="456">
-    <Window.Resources>
-        <SolidColorBrush x:Key="redStyle" Color="BlanchedAlmond" />
-
-        <LinearGradientBrush x:Key="gradientStyle" StartPoint="0.5,1" EndPoint="0.5,0">
-            <GradientStop Color="LightBlue" Offset="0" />
-            <GradientStop Color="White" Offset="1" />
-        </LinearGradientBrush>
-    </Window.Resources>
-    <Grid Background="{StaticResource redStyle}">
-        <Button x:Name="button1" MaxHeight="40" MaxWidth="120" Content="Ресурсы в WPF" Background="{StaticResource gradientStyle}">
-            <Button.Resources>
-                <SolidColorBrush x:Key="darkStyle" Color="Gray" />
-            </Button.Resources>
-        </Button>
-    </Grid>
+    <StackPanel>
+        <TextBox x:Name="myTextBox" Height="30" />
+        <TextBlock x:Name="myTextBlock" Text="{Binding ElementName=myTextBox,Path=Text}" Height="30" />
+    </StackPanel>
 </Window>
