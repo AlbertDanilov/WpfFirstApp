@@ -7,19 +7,10 @@
         xmlns:local1="clr-namespace:WpfFirstApp.Models"
         xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
         mc:Ignorable="d"
-        Name="Main" Height="193" Width="456">
-    <Window.Resources>
-        <Style TargetType="Button">
-            <Style.Triggers>
-                <DataTrigger Binding="{Binding ElementName=checkBox1, Path=IsChecked}"
-                        Value="True">
-                    <Setter Property="IsEnabled" Value="False"/>
-                </DataTrigger>
-            </Style.Triggers>
-        </Style>
-    </Window.Resources>
-    <StackPanel >
-        <CheckBox x:Name="checkBox1" Content="Disable" />
-        <Button x:Name="button1" Content="Кнопка 1" />
+        Title="MainWindow" Height="250" Width="300" Style="{DynamicResource WindowStyle}">
+    <StackPanel>
+        <ComboBox x:Name="styleBox" />
+        <Button Content="Hello WPF" Style="{DynamicResource ButtonStyle}" />
+        <TextBlock Text="Windows Presentation Foundation" Style="{DynamicResource TextBlockStyle}" />
     </StackPanel>
 </Window>
