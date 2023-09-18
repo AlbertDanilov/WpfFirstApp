@@ -7,59 +7,35 @@
         xmlns:local1="clr-namespace:WpfFirstApp.Models"
         xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
         mc:Ignorable="d"
-        Title="MainWindow" Height="250" Width="300" Style="{DynamicResource WindowStyle}">
-    <Grid>
-        <Button x:Name="myButton" Content="Привет" Height="40" Width="100">
-            <Button.Template>
-                <ControlTemplate TargetType="Button">
-                    <Border CornerRadius="25"
-                BorderBrush="{TemplateBinding BorderBrush}"
-                BorderThickness="{TemplateBinding BorderThickness}"
-                Height="{TemplateBinding Height}"
-                Width="{TemplateBinding Width}">
-
-                        <Border.Background>
-                            <SolidColorBrush x:Name="BorderColor" Color="LightPink" />
-                        </Border.Background>
-                        <ContentControl Margin="{TemplateBinding Padding}"
-                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                    Content="{TemplateBinding Content}" />
-
-                        <VisualStateManager.VisualStateGroups>
-                            <VisualStateGroup Name="CommonStates">
-                                <VisualState Name="MouseOver">
-                                    <Storyboard>
-                                        <ColorAnimation Storyboard.TargetName="BorderColor"
-                                    Storyboard.TargetProperty="Color" To="LightBlue" />
-                                    </Storyboard>
-                                </VisualState>
-                                <VisualState Name="Normal">
-                                    <Storyboard>
-                                        <ColorAnimation Storyboard.TargetName="BorderColor"
-                                    Storyboard.TargetProperty="Color" To="LightPink" />
-                                    </Storyboard>
-                                </VisualState>
-                                <VisualStateGroup.Transitions>
-                                    <VisualTransition From="MouseOver" To="Normal"
-                                    GeneratedDuration="0:0:1.5">
-                                        <Storyboard>
-                                            <ColorAnimationUsingKeyFrames Storyboard.TargetName="BorderColor"
-       Storyboard.TargetProperty="Color" FillBehavior="HoldEnd">
-                                                <ColorAnimationUsingKeyFrames.KeyFrames>
-                                                    <LinearColorKeyFrame Value="Yellow" KeyTime="0:0:0.5" />
-                                                    <LinearColorKeyFrame Value="Red" KeyTime="0:0:1" />
-                                                    <LinearColorKeyFrame Value="Green" KeyTime="0:0:1.5" />
-                                                </ColorAnimationUsingKeyFrames.KeyFrames>
-                                            </ColorAnimationUsingKeyFrames>
-                                        </Storyboard>
-                                    </VisualTransition>
-                                </VisualStateGroup.Transitions>
-                            </VisualStateGroup>
-                        </VisualStateManager.VisualStateGroups>
+        Title="Круглое окно" Height="250" Width="300"
+        AllowsTransparency="True" WindowStyle="None" Background="Transparent">
+    <Window.Template>
+        <ControlTemplate TargetType="Window">
+            <Border Name="newBorder" CornerRadius="150" Opacity="0.7" Background="LightBlue">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <!--Заголовок-->
+                    <TextBlock Text="{TemplateBinding Title}" FontWeight="Bold" HorizontalAlignment="Center"
+                    MouseLeftButtonDown="TextBlock_MouseLeftButtonDown"/>
+                    <!--Основное содержание-->
+                    <Border Grid.Row="1">
+                        <AdornerDecorator>
+                            <ContentPresenter />
+                        </AdornerDecorator>
                     </Border>
-                </ControlTemplate>
-            </Button.Template>
-        </Button>
+                    <!--Элемент захвата и изменения размера - работает только для прямоугольных окон-->
+                    <ResizeGrip Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                            Visibility="Collapsed" IsTabStop="False" />
+                </Grid>
+            </Border>
+        </ControlTemplate>
+    </Window.Template>
+    <Grid ShowGridLines="True">
+        <Button x:Name="closeButton" Content="Закрыть" Click="closeButton_Click"
+                Width="80" Height="30" Background="LightPink" />
     </Grid>
 </Window>

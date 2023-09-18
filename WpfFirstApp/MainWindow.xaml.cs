@@ -25,8 +25,17 @@ namespace WpfFirstApp
         public MainWindow()
         {
             InitializeComponent();
+        }
 
+        private void closeButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
 
+        //Служит для перемещения окна за заголовок формы
+        private void TextBlock_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            this.DragMove();
         }
     }
 }
