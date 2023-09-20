@@ -22,19 +22,14 @@ namespace WpfFirstApp
     /// </summary>
     public partial class MainWindow : Window
     {
-        public Phone MyPhone { get; set; }
+        List<string> phones;
 
         public MainWindow()
         {
             InitializeComponent();
 
-            MyPhone = new Phone
-            {
-                Name = "Nokia",
-                Company = new Company { Title = "Microsoft" },
-                Price = 1000
-            };
-            this.DataContext = MyPhone;
+            phones = new List<string>() { "Apple", "Google", "Samsung" };
+            phonesList.ItemsSource = phones;
         }
     }
 }
