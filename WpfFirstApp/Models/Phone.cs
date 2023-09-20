@@ -11,9 +11,10 @@ namespace WpfFirstApp.Models
 {
     public class Phone
     {
-        public string Name { get; set; }
-        public Company Company { get; set; }
-        public decimal Price { get; set; }
+        public int Id { get; set; }
+        public string Title { get; set; } // модель телефона
+        public string Company { get; set; } // производитель
+        public string ImagePath { get; set; } // путь к изображению
     }
 
     public class Company

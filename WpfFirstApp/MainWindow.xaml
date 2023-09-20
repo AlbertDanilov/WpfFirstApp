@@ -8,15 +8,16 @@
         xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
         mc:Ignorable="d"
         Title="окно" Height="250" Width="300">
+    <Window.Resources>
+        <DataTemplate x:Key="listTemplate">
+            <StackPanel Margin="5">
+                <Image Width="100" Height="75" Source="{Binding Path=ImagePath}"/>
+                <TextBlock FontSize="16" Text="{Binding Path=Title}" HorizontalAlignment="Center"/>
+                <TextBlock FontSize="16" Text="{Binding Path=Company}" HorizontalAlignment="Center"/>
+            </StackPanel>
+        </DataTemplate>
+    </Window.Resources>
     <Grid ShowGridLines="True">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
-        <ListBox x:Name="phonesList" />
-        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0 15 0 0" HorizontalAlignment="Center">
-            <TextBox x:Name="phoneTextBox" Width="190"/>
-            <Button Content="Сохранить" MaxWidth="70" Margin="10 0 0 0" Click="Button_click" />
-        </StackPanel>
+        <ListBox x:Name="phonesList" ItemTemplate="{StaticResource listTemplate}" SelectionChanged="phonesList_SelectionChanged" />
     </Grid>
 </Window>

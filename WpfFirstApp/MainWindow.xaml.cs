@@ -23,19 +23,26 @@ namespace WpfFirstApp
     /// </summary>
     public partial class MainWindow : Window
     {
-        ObservableCollection<string> phones;
+        public ObservableCollection<Phone> phones {  get; set; }
 
         public MainWindow()
         {
             InitializeComponent();
 
-            phones = new ObservableCollection<string>() { "Apple", "Google", "Samsung" };
+            phones = new ObservableCollection<Phone>
+            {
+                new Phone {Id=1, ImagePath="/Images/iphone6s.JPG", Title="iPhone 6S", Company="Apple" },
+                new Phone {Id=2, ImagePath="/Images/lumia950.JPG", Title="Lumia 950", Company="Microsoft" },
+                new Phone {Id=3, ImagePath="/Images/nexus5x.JPG", Title="Nexus 5X", Company="Google" },
+                new Phone {Id=4, ImagePath="/Images/galaxys6.JPG", Title="Galaxy S6", Company="Samsung"}
+            };
             phonesList.ItemsSource = phones;
         }
 
-        public void Button_click(object sender, RoutedEventArgs e)
+        private void phonesList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            phones.Add(phoneTextBox.Text);
+            Phone p = (Phone)phonesList.SelectedItem;
+            MessageBox.Show(p.Title);
         }
     }
 }
