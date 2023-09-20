@@ -18,7 +18,10 @@
         </DataTemplate>
     </Window.Resources>
     <Grid ShowGridLines="True">
-        <ListBox x:Name="phonesList" ItemTemplate="{StaticResource listTemplate}" SelectionChanged="phonesList_SelectionChanged">
+        <ListBox x:Name="phonesList" 
+                 ItemTemplate="{StaticResource listTemplate}" 
+                 SelectionChanged="phonesList_SelectionChanged"
+                 ScrollViewer.HorizontalScrollBarVisibility="Disabled">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel />
