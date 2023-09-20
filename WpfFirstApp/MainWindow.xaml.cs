@@ -22,20 +22,19 @@ namespace WpfFirstApp
     /// </summary>
     public partial class MainWindow : Window
     {
+        public Phone MyPhone { get; set; }
+
         public MainWindow()
         {
             InitializeComponent();
-        }
 
-        private void closeButton_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-
-        //Служит для перемещения окна за заголовок формы
-        private void TextBlock_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            this.DragMove();
+            MyPhone = new Phone
+            {
+                Name = "Nokia",
+                Company = new Company { Title = "Microsoft" },
+                Price = 1000
+            };
+            this.DataContext = MyPhone;
         }
     }
 }

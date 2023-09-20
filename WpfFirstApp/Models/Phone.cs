@@ -9,46 +9,15 @@ using System.Windows;
 
 namespace WpfFirstApp.Models
 {
-    public class Phone : INotifyPropertyChanged
+    public class Phone
     {
-        public event PropertyChangedEventHandler? PropertyChanged;
+        public string Name { get; set; }
+        public Company Company { get; set; }
+        public decimal Price { get; set; }
+    }
 
-        private string title;
-        private int price;
-        private string company;
-
-
-        public string Company 
-        {
-            get { return company; }
-            set { 
-                    company = value;
-                    OnPropertyChanged("Company");
-            }
-        }
-     
-
-        public string Title
-        {
-            get { return title; }
-            set { 
-                    title = value;
-                    OnPropertyChanged("Title");
-            }
-        }
-        public int Price
-        {
-            get { return price; }
-            set {
-                    price = value;
-                    OnPropertyChanged("Price");  
-                }
-        }
-
-        public void OnPropertyChanged([CallerMemberName] string prop = "")
-        {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(prop));
-        }
+    public class Company
+    {
+        public string Title { get; set; }
     }
 }
