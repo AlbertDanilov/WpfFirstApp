@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,14 +23,19 @@ namespace WpfFirstApp
     /// </summary>
     public partial class MainWindow : Window
     {
-        List<string> phones;
+        ObservableCollection<string> phones;
 
         public MainWindow()
         {
             InitializeComponent();
 
-            phones = new List<string>() { "Apple", "Google", "Samsung" };
+            phones = new ObservableCollection<string>() { "Apple", "Google", "Samsung" };
             phonesList.ItemsSource = phones;
+        }
+
+        public void Button_click(object sender, RoutedEventArgs e)
+        {
+            phones.Add(phoneTextBox.Text);
         }
     }
 }
