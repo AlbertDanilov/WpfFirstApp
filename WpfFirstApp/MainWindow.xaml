@@ -18,6 +18,12 @@
         </DataTemplate>
     </Window.Resources>
     <Grid ShowGridLines="True">
-        <ListBox x:Name="phonesList" ItemTemplate="{StaticResource listTemplate}" SelectionChanged="phonesList_SelectionChanged" />
+        <ListBox x:Name="phonesList" ItemTemplate="{StaticResource listTemplate}" SelectionChanged="phonesList_SelectionChanged">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel />
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+        </ListBox>
     </Grid>
 </Window>
