@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfFirstApp.Models;
 
 namespace WpfFirstApp
 {
@@ -22,36 +23,77 @@ namespace WpfFirstApp
     /// </summary>
     public partial class MainWindow : Window
     {
+        ObservableCollection<Node> nodes;
+
         public MainWindow()
         {
             InitializeComponent();
+
+            nodes = new ObservableCollection<Node>
+            {
+                new Node
+                {
+                    Name ="Европа",
+                    Nodes = new ObservableCollection<Node>
+                    {
+                        new Node {Name="Германия" },
+                        new Node {Name="Франция" },
+                        new Node
+                        {
+                            Name ="Великобритания",
+                            Nodes = new ObservableCollection<Node>
+                            {
+                                new Node {Name="Англия" },
+                                new Node {Name="Шотландия" },
+                                new Node {Name="Уэльс" },
+                                new Node {Name="Сев. Ирландия" },
+                            }
+                        }
+                    }
+                },
+                new Node
+                {
+                    Name ="Азия",
+                    Nodes = new ObservableCollection<Node>
+                    {
+                        new Node {Name="Китай" },
+                        new Node {Name="Япония" },
+                        new Node { Name ="Индия" }
+                    }
+                },
+                new Node { Name="Африка" },
+                new Node { Name="Америка" },
+                new Node { Name="Австралия" }
+            };
+
+            treeView1.ItemsSource = nodes;
         }
     }
 
-    public class PhoneRepository
-    {
-        private ObservableCollection<Phone> phones;
+    //public class PhoneRepository
+    //{
+    //    private ObservableCollection<Phone> phones;
 
-        public PhoneRepository()
-        {
-            phones = new ObservableCollection<Phone>
-        {
-            new Phone {Id=1, Title="iPhone 6S", Company="Apple" },
-            new Phone {Id=2, Title="Lumia 950", Company="Microsoft" },
-            new Phone {Id=3, Title="Nexus 5X", Company="Google" },
-            new Phone {Id=4, Title="Galaxy S6", Company="Samsung"}
-        };
-        }
-        public ObservableCollection<Phone> GetPhones()
-        {
-            return phones;
-        }
-    }
+    //    public PhoneRepository()
+    //    {
+    //        phones = new ObservableCollection<Phone>
+    //    {
+    //        new Phone {Id=1, Title="iPhone 6S", Company="Apple" },
+    //        new Phone {Id=2, Title="Lumia 950", Company="Microsoft" },
+    //        new Phone {Id=3, Title="Nexus 5X", Company="Google" },
+    //        new Phone {Id=4, Title="Galaxy S6", Company="Samsung"}
+    //    };
+    //    }
+    //    public ObservableCollection<Phone> GetPhones()
+    //    {
+    //        return phones;
+    //    }
+    //}
 
-    public class Phone
-    {
-        public int Id { get; set; }
-        public string Title { get; set; } // модель телефона
-        public string Company { get; set; } // производитель
-    }
+    //public class Phone
+    //{
+    //    public int Id { get; set; }
+    //    public string Title { get; set; } // модель телефона
+    //    public string Company { get; set; } // производитель
+    //}
 }
