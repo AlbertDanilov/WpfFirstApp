@@ -23,14 +23,9 @@ namespace WpfFirstApp
     /// </summary>
     public partial class MainWindow : Window
     {
-        PersonModel Tom;
-
         public MainWindow()
         {
             InitializeComponent();
-
-            Tom = new PersonModel();
-            this.DataContext = Tom;
         }
     }
 }

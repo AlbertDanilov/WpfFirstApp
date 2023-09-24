@@ -8,40 +8,78 @@
         mc:Ignorable="d"
         Title="окно" Height="250" Width="300">
     <Window.Resources>
-        <ControlTemplate x:Key="validationFailed">
-            <StackPanel Orientation="Horizontal">
-                <Border BorderBrush="Violet" BorderThickness="2">
-                    <AdornedElementPlaceholder />
-                </Border>
-                <TextBlock Foreground="Red" FontSize="26" FontWeight="Bold">!</TextBlock>
-            </StackPanel>
-        </ControlTemplate>
     </Window.Resources>
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto" />
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
-        <TextBox Grid.Column="1" Height="30" Margin="0 0 15 0" />
-        <TextBox Grid.Column="1" Grid.Row="1" Height="30" Margin="0 0 15 0"
-            Validation.ErrorTemplate="{StaticResource validationFailed}">
-            <TextBox.Text>
-                <Binding Path="Age">
-                    <Binding.ValidationRules>
-                        <DataErrorValidationRule />
-                    </Binding.ValidationRules>
-                </Binding>
-            </TextBox.Text>
-        </TextBox>
-
-        <TextBox Grid.Column="1" Grid.Row="2" Height="30" Margin="0 0 15 0" />
-        <Label Content="Введите имя" Height="30" />
-        <Label Grid.Row="1" Content="Введите возраст" Height="30" />
-        <Label Grid.Row="2" Content="Введите должность" Height="30" />
+        <FlowDocumentScrollViewer>
+            <FlowDocument>
+                <Paragraph>Флагманы 2015</Paragraph>
+                <Table>
+                    <Table.Columns>
+                        <TableColumn Width="2*" />
+                        <TableColumn Width="2*" />
+                        <TableColumn Width="*" />
+                    </Table.Columns>
+                    <TableRowGroup FontSize="14">
+                        <TableRow FontSize="15">
+                            <TableCell>
+                                <Paragraph>Модель</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>Компания</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>Цена</Paragraph>
+                            </TableCell>
+                        </TableRow>
+                        <TableRow>
+                            <TableCell>
+                                <Paragraph>Lumia 950</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>Microsoft</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>45000</Paragraph>
+                            </TableCell>
+                        </TableRow>
+                        <TableRow>
+                            <TableCell>
+                                <Paragraph>iPhone 6s</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>Apple</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>54000</Paragraph>
+                            </TableCell>
+                        </TableRow>
+                        <TableRow>
+                            <TableCell>
+                                <Paragraph>Nexus 6P</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>Huawei</Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph>50000</Paragraph>
+                            </TableCell>
+                        </TableRow>
+                    </TableRowGroup>
+                </Table>
+                <BlockUIContainer FontSize="13">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Height="40" Padding="10">Click the Button to see TIOBE Rate</TextBlock>
+                        <Button Width="60">Click Me</Button>
+                    </StackPanel>
+                </BlockUIContainer>
+                <Paragraph TextAlignment="Left" FontSize="15">
+                    "Да, здесь, в этом лесу был этот дуб, с которым мы были согласны", подумал князь Андрей.
+                    <Figure Width="170" Padding="5" HorizontalAnchor="ContentLeft" FontSize="18" FontStyle="Italic">
+                        <Paragraph>Война и мир. Том 2. Часть 3</Paragraph>
+                    </Figure>
+                    "Да где он", подумал опять князь Андрей, глядя на левую сторону дороги и сам того не зная...
+                </Paragraph>
+            </FlowDocument>
+        </FlowDocumentScrollViewer>
     </Grid>
 </Window>
