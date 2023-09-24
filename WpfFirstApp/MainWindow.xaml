@@ -4,29 +4,15 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfFirstApp" 
-        xmlns:local1="clr-namespace:WpfFirstApp.Models"
         xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
         mc:Ignorable="d"
         Title="окно" Height="250" Width="300">
     <Window.Resources>
-        <DataTemplate x:Key="listTemplate">
-            <StackPanel Margin="5">
-                <Image Width="100" Height="75" Source="{Binding Path=ImagePath}"/>
-                <TextBlock FontSize="16" Text="{Binding Path=Title}" HorizontalAlignment="Center"/>
-                <TextBlock FontSize="16" Text="{Binding Path=Company}" HorizontalAlignment="Center"/>
-            </StackPanel>
-        </DataTemplate>
+        <ObjectDataProvider x:Key="phonesProvider"
+                ObjectType="{x:Type local:PhoneRepository}" MethodName="GetPhones" />
     </Window.Resources>
-    <Grid ShowGridLines="True">
-        <ListBox x:Name="phonesList" 
-                 ItemTemplate="{StaticResource listTemplate}" 
-                 SelectionChanged="phonesList_SelectionChanged"
-                 ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-            <ListBox.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <WrapPanel />
-                </ItemsPanelTemplate>
-            </ListBox.ItemsPanel>
-        </ListBox>
+    <Grid>
+        <ListBox x:Name="phonesList" DisplayMemberPath="Title"
+                 ItemsSource="{Binding Source={StaticResource phonesProvider}}" />
     </Grid>
 </Window>

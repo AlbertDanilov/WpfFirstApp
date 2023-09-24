@@ -14,7 +14,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using WpfFirstApp.Models;
 
 namespace WpfFirstApp
 {
@@ -23,26 +22,36 @@ namespace WpfFirstApp
     /// </summary>
     public partial class MainWindow : Window
     {
-        public ObservableCollection<Phone> phones {  get; set; }
-
         public MainWindow()
         {
             InitializeComponent();
-
-            phones = new ObservableCollection<Phone>
-            {
-                new Phone {Id=1, ImagePath="/Images/iphone6s.JPG", Title="iPhone 6S", Company="Apple" },
-                new Phone {Id=2, ImagePath="/Images/lumia950.JPG", Title="Lumia 950", Company="Microsoft" },
-                new Phone {Id=3, ImagePath="/Images/nexus5x.JPG", Title="Nexus 5X", Company="Google" },
-                new Phone {Id=4, ImagePath="/Images/galaxys6.JPG", Title="Galaxy S6", Company="Samsung"}
-            };
-            phonesList.ItemsSource = phones;
         }
+    }
 
-        private void phonesList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    public class PhoneRepository
+    {
+        private ObservableCollection<Phone> phones;
+
+        public PhoneRepository()
         {
-            Phone p = (Phone)phonesList.SelectedItem;
-            MessageBox.Show(p.Title);
+            phones = new ObservableCollection<Phone>
+        {
+            new Phone {Id=1, Title="iPhone 6S", Company="Apple" },
+            new Phone {Id=2, Title="Lumia 950", Company="Microsoft" },
+            new Phone {Id=3, Title="Nexus 5X", Company="Google" },
+            new Phone {Id=4, Title="Galaxy S6", Company="Samsung"}
+        };
         }
+        public ObservableCollection<Phone> GetPhones()
+        {
+            return phones;
+        }
+    }
+
+    public class Phone
+    {
+        public int Id { get; set; }
+        public string Title { get; set; } // модель телефона
+        public string Company { get; set; } // производитель
     }
 }
